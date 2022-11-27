@@ -87,7 +87,7 @@ namespace livrable01
             
             
             pathDestination = Console.ReadLine();                      // Stock the Destination folder information in a variable : pathDestination
-
+            pathDestination += '/';
             Console.WriteLine("\r\n");
             AnsiConsole.Write(new BarChart()
             .Width(60)

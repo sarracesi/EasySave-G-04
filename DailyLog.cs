@@ -23,7 +23,7 @@ namespace livrable01
 
             List<string> tmp = new List<string>();
             int cnt = log.counte;
-            string f = @"C:\Users\dellde\Desktop\A3\sarra\" + "DailyLogDu" + DateTime.Now.ToString("dd-MM-yyyy") + ".json";    // Name of the log file which is the date of the day
+            string f = @"C:" + "DailyLogDu" + DateTime.Now.ToString("dd-MM-yyyy") + ".json";    // Name of the log file which is the date of the day
 
 
 

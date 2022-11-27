@@ -44,7 +44,7 @@ namespace livrable01
             List<string> tmp = new List<string>();
             int cnt = backup.k;  
 
-            string f = @"C:\Users\dellde\Desktop\A3\sarra\" + backup.BackupName + ".json";  // Name of the log file 
+            string f = @"C:" + backup.BackupName + ".json";  // Name of the log file 
 
 
             foreach (string a in backup.logsb)   // Using foreach to get all elements in the Files list
