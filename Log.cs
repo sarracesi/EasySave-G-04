@@ -50,12 +50,12 @@ namespace livrable01
 
             string f = backup.pathDestination + backup.BackupName + ".json";  // Name of the log file 
             string v = backup.pathDestination + backup.BackupName + ".xml";  // Name of the log file 
-
+            DateTime start_time = DateTime.Now;
+            int milliseconds = 1 + (int)((DateTime.Now - start_time).TotalMilliseconds);
 
             foreach (string a in backup.logsb)   // Using foreach to get all elements in the Files list
             {
-                DateTime start_time = DateTime.Now;
-                int milliseconds = 1 + (int)((DateTime.Now - start_time).TotalMilliseconds);
+                
 
                 var lista = new              //Objects to insert into our JSON file
                 {
@@ -73,32 +73,7 @@ namespace livrable01
 
                 };
                 
-                XmlWriterSettings writerSettings = new XmlWriterSettings();
-                writerSettings.OmitXmlDeclaration = true;
-                writerSettings.ConformanceLevel = ConformanceLevel.Fragment;
-                writerSettings.CloseOutput = false;
-
-                XmlWriter writer = XmlWriter.Create(v, writerSettings);
-                {
-                    writer.WriteStartElement("Log");
-                    foreach (string b in backup.logsb)
-                    {
-                        writer.WriteElementString("Name", backup.BackupName);
-                        writer.WriteElementString("FileSource", b);
-                        writer.WriteElementString("FileTarget", backup.pathDestination + Path.GetFileName(b));
-                        writer.WriteElementString("SourcePath", Path.GetDirectoryName(b));
-                        writer.WriteElementString("DestinationPath", backup.pathDestination);
-                        writer.WriteElementString("FileName", Path.GetFileName(b));
-                        writer.WriteElementString("FileType", Path.GetExtension(b));
-                        writer.WriteElementString("FileSize", XmlConvert.ToString(b.Length));
-                        writer.WriteElementString("FileTransferTime", milliseconds + "ms");
-                        writer.WriteElementString("Time", XmlConvert.ToString(DateTime.Now));
-                    }
-                    
-                    writer.WriteEndElement();
-                    writer.Flush();
-                };
-
+               
                 
 
                 var options = new JsonSerializerOptions { WriteIndented = true };     // To use it after in order to make the Json file better structured
@@ -157,10 +132,36 @@ namespace livrable01
                 int tf = Convert.ToInt32(a.Length);             // Get the size of each file to calculate the size of total files 
                 total = total + tf; //The size of the file
             }
-
-
             
+
+            XmlWriterSettings writerSettings = new XmlWriterSettings();
+            writerSettings.OmitXmlDeclaration = true;
+            writerSettings.ConformanceLevel = ConformanceLevel.Fragment;
+            writerSettings.CloseOutput = false;
+
+            XmlWriter writer = XmlWriter.Create(v, writerSettings);
+            {
+                writer.WriteStartElement("Log");
+                foreach (string b in backup.logsb)
+                {
+                    writer.WriteElementString("Name", backup.BackupName);
+                    writer.WriteElementString("FileSource", b);
+                    writer.WriteElementString("FileTarget", backup.pathDestination + Path.GetFileName(b));
+                    writer.WriteElementString("SourcePath", Path.GetDirectoryName(b));
+                    writer.WriteElementString("DestinationPath", backup.pathDestination);
+                    writer.WriteElementString("FileName", Path.GetFileName(b));
+                    writer.WriteElementString("FileType", Path.GetExtension(b));
+                    writer.WriteElementString("FileSize", XmlConvert.ToString(b.Length));
+                    writer.WriteElementString("FileTransferTime", milliseconds + "ms");
+                    writer.WriteElementString("Time", XmlConvert.ToString(DateTime.Now));
+                }
+
+                writer.WriteEndElement();
+                writer.Flush();
+            };
+
+
         }
-        
+
     }
 }

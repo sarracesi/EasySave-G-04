@@ -30,3 +30,19 @@ C:\Users\dellde\Source\Repos\EasySave-G-04\obj\Debug\netcoreapp3.1\livrable01.cs
 C:\Users\dellde\Source\Repos\EasySave-G-04\obj\Debug\netcoreapp3.1\livrable01.dll
 C:\Users\dellde\Source\Repos\EasySave-G-04\obj\Debug\netcoreapp3.1\livrable01.pdb
 C:\Users\dellde\Source\Repos\EasySave-G-04\obj\Debug\netcoreapp3.1\livrable01.genruntimeconfig.cache
+C:\Users\26\source\repos\EasySave V1.1\bin\Debug\netcoreapp3.1\livrable01.exe
+C:\Users\26\source\repos\EasySave V1.1\bin\Debug\netcoreapp3.1\livrable01.deps.json
+C:\Users\26\source\repos\EasySave V1.1\bin\Debug\netcoreapp3.1\livrable01.runtimeconfig.json
+C:\Users\26\source\repos\EasySave V1.1\bin\Debug\netcoreapp3.1\livrable01.runtimeconfig.dev.json
+C:\Users\26\source\repos\EasySave V1.1\bin\Debug\netcoreapp3.1\livrable01.dll
+C:\Users\26\source\repos\EasySave V1.1\bin\Debug\netcoreapp3.1\livrable01.pdb
+C:\Users\26\source\repos\EasySave V1.1\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\26\source\repos\EasySave V1.1\bin\Debug\netcoreapp3.1\Spectre.Console.dll
+C:\Users\26\source\repos\EasySave V1.1\obj\Debug\netcoreapp3.1\livrable01.csproj.AssemblyReference.cache
+C:\Users\26\source\repos\EasySave V1.1\obj\Debug\netcoreapp3.1\livrable01.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\26\source\repos\EasySave V1.1\obj\Debug\netcoreapp3.1\livrable01.AssemblyInfoInputs.cache
+C:\Users\26\source\repos\EasySave V1.1\obj\Debug\netcoreapp3.1\livrable01.AssemblyInfo.cs
+C:\Users\26\source\repos\EasySave V1.1\obj\Debug\netcoreapp3.1\livrable01.csproj.CoreCompileInputs.cache
+C:\Users\26\source\repos\EasySave V1.1\obj\Debug\netcoreapp3.1\livrable01.dll
+C:\Users\26\source\repos\EasySave V1.1\obj\Debug\netcoreapp3.1\livrable01.pdb
+C:\Users\26\source\repos\EasySave V1.1\obj\Debug\netcoreapp3.1\livrable01.genruntimeconfig.cache
