@@ -9,6 +9,7 @@ using System.Text.Json;
 using System.Diagnostics;
 using System.Threading;
 using static livrable01.Backup;
+using System.Xml;
 
 namespace livrable01
 {
@@ -27,6 +28,8 @@ namespace livrable01
 
         public long total { get; set; }
 
+       
+
         public void jsonlog()
         {
 
@@ -42,9 +45,11 @@ namespace livrable01
 
             Log_Name = backup.BackupName;
             List<string> tmp = new List<string>();
+            List<string> tmp2 = new List<string>();
             int cnt = backup.k;  
 
             string f = backup.pathDestination + backup.BackupName + ".json";  // Name of the log file 
+            string v = backup.pathDestination + backup.BackupName + ".xml";  // Name of the log file 
 
 
             foreach (string a in backup.logsb)   // Using foreach to get all elements in the Files list
@@ -67,6 +72,34 @@ namespace livrable01
                     Time = DateTime.Now
 
                 };
+                
+                XmlWriterSettings writerSettings = new XmlWriterSettings();
+                writerSettings.OmitXmlDeclaration = true;
+                writerSettings.ConformanceLevel = ConformanceLevel.Fragment;
+                writerSettings.CloseOutput = false;
+
+                XmlWriter writer = XmlWriter.Create(v, writerSettings);
+                {
+                    writer.WriteStartElement("Log");
+                    foreach (string b in backup.logsb)
+                    {
+                        writer.WriteElementString("Name", backup.BackupName);
+                        writer.WriteElementString("FileSource", b);
+                        writer.WriteElementString("FileTarget", backup.pathDestination + Path.GetFileName(b));
+                        writer.WriteElementString("SourcePath", Path.GetDirectoryName(b));
+                        writer.WriteElementString("DestinationPath", backup.pathDestination);
+                        writer.WriteElementString("FileName", Path.GetFileName(b));
+                        writer.WriteElementString("FileType", Path.GetExtension(b));
+                        writer.WriteElementString("FileSize", XmlConvert.ToString(b.Length));
+                        writer.WriteElementString("FileTransferTime", milliseconds + "ms");
+                        writer.WriteElementString("Time", XmlConvert.ToString(DateTime.Now));
+                    }
+                    
+                    writer.WriteEndElement();
+                    writer.Flush();
+                };
+
+                
 
                 var options = new JsonSerializerOptions { WriteIndented = true };     // To use it after in order to make the Json file better structured
                 var jsonString = JsonSerializer.Serialize(lista, options);    // Convert the objects into string for JSON
@@ -126,7 +159,8 @@ namespace livrable01
             }
 
 
-
+            
         }
+        
     }
 }
