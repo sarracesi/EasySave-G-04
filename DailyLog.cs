@@ -40,7 +40,7 @@ namespace livrable01
                     DestinationPath = log.destinationpath,
                     State = log.state,
                     TotalFilesToCopy =log.count,
-                    TotalFilesSize = log.total
+                    TotalFilesSize = log.total + "" + "ko"
 
 
                 };

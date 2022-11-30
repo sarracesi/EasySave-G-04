@@ -20,6 +20,8 @@ namespace livrable01
     {
         public String pathDestination { get; set; }
         public String BackupName { get; set; }
+
+        public String typee { get; set; }
         public String BackupType { get; set; }
         public String pathSource { get; set; }
 
@@ -88,6 +90,30 @@ namespace livrable01
             
             pathDestination = Console.ReadLine();                      // Stock the Destination folder information in a variable : pathDestination
             pathDestination += '/';
+
+            if (Language.langue == "English")
+            {
+
+
+                var rule = new Rule("[cyan1]Enter Type of the Log you want :[/]");        // Ask the user to give the backup proceed a name
+                rule.LeftAligned();
+                AnsiConsole.Write(rule);
+
+
+
+            }
+            else if (Language.langue == "French")
+            {                                       // French version
+                var ruleF = new Rule("[cyan1]Entrez le type de Log que vous voullez:[/]");
+                ruleF.LeftAligned();
+                AnsiConsole.Write(ruleF);
+
+
+
+            }
+
+            typee = Console.ReadLine();
+
             Console.WriteLine("\r\n");
             AnsiConsole.Write(new BarChart()
             .Width(60)

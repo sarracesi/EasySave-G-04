@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\26\\source\\repos\\EasySave V1.1\\livrable01.csproj": {}
+    "C:\\Users\\dellde\\Source\\Repos\\EasySave-G-04\\livrable01.csproj": {}
   },
   "projects": {
-    "C:\\Users\\26\\source\\repos\\EasySave V1.1\\livrable01.csproj": {
+    "C:\\Users\\dellde\\Source\\Repos\\EasySave-G-04\\livrable01.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\26\\source\\repos\\EasySave V1.1\\livrable01.csproj",
+        "projectUniqueName": "C:\\Users\\dellde\\Source\\Repos\\EasySave-G-04\\livrable01.csproj",
         "projectName": "livrable01",
-        "projectPath": "C:\\Users\\26\\source\\repos\\EasySave V1.1\\livrable01.csproj",
-        "packagesPath": "C:\\Users\\26\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\26\\source\\repos\\EasySave V1.1\\obj\\",
+        "projectPath": "C:\\Users\\dellde\\Source\\Repos\\EasySave-G-04\\livrable01.csproj",
+        "packagesPath": "C:\\Users\\dellde\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dellde\\Source\\Repos\\EasySave-G-04\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\26\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dellde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

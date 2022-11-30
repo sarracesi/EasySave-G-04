@@ -1,8 +1,9 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\26\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\26\\.nuget\\packages"
+      "C:\\Users\\dellde\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\dellde\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ]
   }
 }
