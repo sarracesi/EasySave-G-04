@@ -13,6 +13,16 @@ namespace V_3._0.Model
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 
         }
+
+        private int id;
+
+        public int ID
+        {
+            get { return id; }
+            set { id = value; OnPropertyChanged("ID"); }
+        }
+
+
         private string backup_Name;
 
         public string Backup_Name
@@ -31,12 +41,12 @@ namespace V_3._0.Model
         }
 
 
-        private string folder_Path;
+        private string source_Path;
 
-        public string Folder_Path
+        public string Source_Path
         {
-            get { return folder_Path; }
-            set { folder_Path = value; OnPropertyChanged("Folder_Path"); }
+            get { return source_Path; }
+            set { source_Path = value; OnPropertyChanged("Source_Path"); }
         }
 
         private string destination_Path;

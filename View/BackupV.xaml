@@ -6,40 +6,44 @@
              xmlns:local="clr-namespace:V_3._0.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    
-        
-            <Grid Margin="0,0,-48,-6" Background="#FFBDBDA2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <TextBlock HorizontalAlignment="Center" Height="43" Margin="0,2,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="412" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.306,0.699"><Run Language="fr-fr" Text="EasySave : Your Solution for Backup"/></TextBlock>
-                <TextBlock HorizontalAlignment="Left" Height="31" Margin="18,85,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" FontSize="16" FontWeight="Bold"><Run Language="fr-fr" Text="Backup Name"/></TextBlock>
-                <TextBlock HorizontalAlignment="Left" Height="37" Margin="18,121,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" FontSize="16" FontWeight="Bold"><Run Text="Source Path"/><Run Text=" "/></TextBlock>
-                <TextBlock HorizontalAlignment="Left" Height="39" Margin="18,163,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="16" FontWeight="Bold"><Run Text="Destination Path"/><Run Text=" "/></TextBlock>
-                <TextBox x:Name="Destination_Path" HorizontalAlignment="Left" Height="29" Margin="166,163,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="461"/>
-                <TextBox x:Name="Source_Path" HorizontalAlignment="Left" Height="29" Margin="166,121,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="461"/>
-                <TextBox x:Name="Backup_Name" HorizontalAlignment="Left" Height="29" Margin="166,85,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="461"/>
+
+
+    <Grid Margin="0,0,-48,-49" Background="#FFBDBDA2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" Height="43" Margin="0,2,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="412" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.306,0.699"><Run Language="fr-fr" Text="EasySave : Your Solution for Backup"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="31" Margin="18,85,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" FontSize="16" FontWeight="Bold"><Run Language="fr-fr" Text="Backup Name"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="37" Margin="18,169,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" FontSize="16" FontWeight="Bold"><Run Text="Source Path"/><Run Text=" "/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="39" Margin="18,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="16" FontWeight="Bold" Grid.Row="1"><Run Text="Destination Path"/><Run Text=" "/></TextBlock>
+        <TextBox x:Name="Source_Path" HorizontalAlignment="Left" Height="29" Margin="166,166,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="461"/>
+        <TextBox x:Name="Folder_Name" HorizontalAlignment="Left" Height="29" Margin="166,126,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="461"/>
+        <TextBox x:Name="Backup_Name" HorizontalAlignment="Left" Height="29" Margin="166,85,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="461"/>
 
 
 
-                <ListView x:Name="savelist" ItemsSource="{Binding Path = BackupList}" Grid.Row="1" Grid.Column="0" Margin="10,263,59,10" SelectionMode="Single" >
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header ="ID" DisplayMemberBinding="{Binding Path=CurrentBackup.ID}" Width="50"/>
-                            <GridViewColumn Header ="Backup" DisplayMemberBinding="{Binding Path=CurrentBackup.Backup}" Width="90"/>
-                            <GridViewColumn Header ="Folder_Name" DisplayMemberBinding="{Binding Path=CurrentBackup.Folder_Name}" Width="90"/>
-                            <GridViewColumn Header ="Source_Path" DisplayMemberBinding="{Binding Path=CurrentBackup.Source_Path}" Width="190" />
-                            <GridViewColumn Header ="Destination_Path" DisplayMemberBinding="{Binding Path=CurrentBackup.Destination_Path}" Width="190"/>
+        <ListView x:Name="savelist" ItemsSource="{Binding Path = BackupList}" Grid.Row="1" Grid.Column="0" Margin="10,294,59,10" SelectionMode="Single" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header ="ID" DisplayMemberBinding="{Binding Path=ID}" Width="50"/>
+                    <GridViewColumn Header ="Backup" DisplayMemberBinding="{Binding Path=Backup_Name}" Width="90"/>
+                    <GridViewColumn Header ="Folder_Name" DisplayMemberBinding="{Binding Path=Folder_Name}" Width="90"/>
+                    <GridViewColumn Header ="Source_Path" DisplayMemberBinding="{Binding Path=Source_Path}" Width="190" />
+                    <GridViewColumn Header ="Destination_Path" DisplayMemberBinding="{Binding Path=Destination_Path}" Width="190"/>
 
-                        </GridView>
-                    </ListView.View>
-                </ListView>
-                <Button Content="New Backup" HorizontalAlignment="Left" Margin="469,222,0,0" Grid.Row="1" VerticalAlignment="Top" Width="158"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="New Backup" HorizontalAlignment="Left" Margin="614,250,0,0" Grid.Row="1" VerticalAlignment="Top" Width="158"/>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="18,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="16" FontWeight="Bold" Grid.Row="1"><Run Language="fr-fr" Text="Folder Name"/></TextBlock>
+        <TextBox x:Name="Destination_Path" HorizontalAlignment="Left" Height="28" Margin="166,211,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="461"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="678,86,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" FontSize="16" FontWeight="Bold"><Run Language="fr-fr" Text="ID"/></TextBlock>
+        <TextBox x:Name="Id" HorizontalAlignment="Left" Height="29" Margin="713,85,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" TextChanged="Backup_Name_Copy_TextChanged"/>
 
-            
-        
+
+
 
     </Grid>
 </UserControl>

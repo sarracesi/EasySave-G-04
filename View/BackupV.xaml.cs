@@ -22,5 +22,10 @@ namespace V_3._0.View
         {
             InitializeComponent();
         }
+
+        private void Backup_Name_Copy_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
