@@ -10,9 +10,9 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock HorizontalAlignment="Left" Height="43" Margin="260,20,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" FontSize="24" FontWeight="Bold"><Run Language="fr-fr" Text="EasySave"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="31" Margin="44,85,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" FontSize="16" FontWeight="Bold"><Run Language="fr-fr" Text="Nom"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="37" Margin="38,121,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" FontSize="16" FontWeight="Bold"><Run Language="fr-fr" Text="Source"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="39" Margin="24,163,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" FontSize="16" FontWeight="Bold"><Run Language="fr-fr" Text="Destination"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="31" Margin="18,85,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" FontSize="16" FontWeight="Bold"><Run Language="fr-fr" Text="Backup Name"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="37" Margin="18,121,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" FontSize="16" FontWeight="Bold"><Run Text="Source"/><Run Language="fr-fr" Text=" Path"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="39" Margin="18,163,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="16" FontWeight="Bold"><Run Text="Destination"/><Run Language="fr-fr" Text=" Path"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="39" Margin="5,202,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" FontSize="16" FontWeight="Bold"><Run Language="fr-fr" Text="Type de sauvegarde"/></TextBlock>
         <TextBox HorizontalAlignment="Left" Height="29" Margin="166,163,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="329"/>
         <TextBox HorizontalAlignment="Left" Height="29" Margin="166,121,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="329"/>
