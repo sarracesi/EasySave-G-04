@@ -8,18 +8,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace V_3._0.View
 {
     /// <summary>
-    /// Logique d'interaction pour MainPage.xaml
+    /// Logique d'interaction pour BackupView.xaml
     /// </summary>
-    public partial class MainPage : Window
+    public partial class BackupView : UserControl
     {
-        public MainPage()
+        public BackupView()
         {
-            InitializeComponent();
+            /*InitializeComponent();*/
         }
     }
 }
