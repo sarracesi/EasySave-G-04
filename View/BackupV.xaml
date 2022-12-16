@@ -18,13 +18,13 @@
         <TextBlock HorizontalAlignment="Left" Height="31" Margin="18,85,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" FontSize="16" FontWeight="Bold"><Run Language="fr-fr" Text="Backup Name"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="37" Margin="18,169,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" FontSize="16" FontWeight="Bold"><Run Text="Source Path"/><Run Text=" "/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="39" Margin="18,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="16" FontWeight="Bold" Grid.Row="1"><Run Text="Destination Path"/><Run Text=" "/></TextBlock>
-        <TextBox x:Name="Source_Path" HorizontalAlignment="Left" Height="29" Margin="166,166,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="461"/>
-        <TextBox x:Name="Folder_Name" HorizontalAlignment="Left" Height="29" Margin="166,126,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="461"/>
-        <TextBox x:Name="Backup_Name" HorizontalAlignment="Left" Height="29" Margin="166,85,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="461"/>
+        <TextBox x:Name="Source_Path" Text="{Binding Path= CurrentBackup.Source_Path, Mode=TwoWay}" HorizontalAlignment="Left" Height="29" Margin="166,166,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="461"/>
+        <TextBox x:Name="Folder_Name" Text="{Binding Path= CurrentBackup.Folder_Name, Mode=TwoWay}" HorizontalAlignment="Left" Height="29" Margin="166,126,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="461"/>
+        <TextBox x:Name="Backup_Name" Text="{Binding Path= CurrentBackup.Backup_Name, Mode=TwoWay}" HorizontalAlignment="Left" Height="29" Margin="166,85,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="461"/>
 
 
 
-        <ListView x:Name="savelist" ItemsSource="{Binding Path = BackupList}" Grid.Row="1" Grid.Column="0" Margin="10,294,59,10" SelectionMode="Single" >
+        <ListView x:Name="savelist" ItemsSource="{Binding Path = BackupList, Mode=TwoWay}" Grid.Row="1" Grid.Column="0" Margin="10,294,59,10" SelectionMode="Single" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header ="ID" DisplayMemberBinding="{Binding Path=ID}" Width="50"/>
@@ -36,11 +36,12 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="New Backup" HorizontalAlignment="Left" Margin="614,250,0,0" Grid.Row="1" VerticalAlignment="Top" Width="158"/>
+        <Button Content="New Backup" Command ="{Binding Path=SaveCommand}" HorizontalAlignment="Left" Margin="614,250,0,0" Grid.Row="1" VerticalAlignment="Top" Width="158"/>
         <TextBlock HorizontalAlignment="Left" Height="40" Margin="18,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="16" FontWeight="Bold" Grid.Row="1"><Run Language="fr-fr" Text="Folder Name"/></TextBlock>
-        <TextBox x:Name="Destination_Path" HorizontalAlignment="Left" Height="28" Margin="166,211,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="461"/>
+        <TextBox x:Name="Destination_Path" Text="{Binding Path= CurrentBackup.Destination_Path}" HorizontalAlignment="Left" Height="28" Margin="166,211,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="461" TextChanged="Destination_Path_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Height="30" Margin="678,86,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" FontSize="16" FontWeight="Bold"><Run Language="fr-fr" Text="ID"/></TextBlock>
-        <TextBox x:Name="Id" HorizontalAlignment="Left" Height="29" Margin="713,85,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" TextChanged="Backup_Name_Copy_TextChanged"/>
+        <TextBox x:Name="Id" Text="{Binding Path= CurrentBackup.ID}" HorizontalAlignment="Left" Height="29" Margin="713,85,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" TextChanged="Backup_Name_Copy_TextChanged"/>
+        <TextBlock HorizontalAlignment="Left" Text="{Binding Path=Message}"  Height="26" Margin="157,250,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="452"/>
 
 
 

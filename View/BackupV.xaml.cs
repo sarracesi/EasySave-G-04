@@ -27,5 +27,10 @@ namespace V_3._0.View
         {
 
         }
+
+        private void Destination_Path_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

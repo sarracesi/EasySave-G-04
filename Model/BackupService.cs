@@ -14,7 +14,7 @@ namespace V_3._0.Model
         {
             ObjBackupsList = new List<Backup>()
             {
-                new Backup{ID=1, Backup_Name= "save1",Folder_Name="Folder1", Source_Path= "C:\\Users\\26\\Desktop\\Demo", Destination_Path= "C:\\Users\\26\\Desktop\\Demo\\Folder2"}
+                new Backup()
             };
         }
 

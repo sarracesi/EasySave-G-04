@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
 using V_3._0.Model;
+using System.Linq;
+using System.Threading.Tasks;
+using V_3._0.Commands;
+using System.Collections.ObjectModel;
 
 namespace V_3._0.ViewModel
 {
@@ -26,21 +30,31 @@ namespace V_3._0.ViewModel
             ObjbackupService = new BackupService();
             LoadData();
             CurrentBackup = new Backup();
+            saveCommand = new RelayCommand(Save);
+            
         }
 
         #region DisplayOperation
-        private List<Backup> backupList;
+        private ObservableCollection<Backup> backupList;
 
-        public List<Backup> BackupList
+        public ObservableCollection<Backup> BackupList
         {
             get { return backupList; }
-            set { backupList = value; OnPropertyChanged("BackupList"); }
+            set { backupList = value; OnPropertyChanged("backupList"); }
         }
         private void LoadData()
         {
-            BackupList = ObjbackupService.GetAll();
+            BackupList = new ObservableCollection<Backup> (ObjbackupService.GetAll());
         }
         #endregion
+        private string message;
+
+        public string Message
+        {
+
+            get { return message; }
+            set { message = value; OnPropertyChanged("Message"); }
+        }
 
         private Backup currentBackup;
         public Backup CurrentBackup
@@ -49,6 +63,33 @@ namespace V_3._0.ViewModel
             get { return currentBackup; }
             set { currentBackup = value; OnPropertyChanged("CurrentBackup"); }
         }
+
+        private RelayCommand saveCommand;
+
+        public RelayCommand SaveCommand
+        {
+            get { return saveCommand; }
+            
+        }
+        public void Save()
+        {
+            try
+            {
+                var IsSaved = ObjbackupService.Add(CurrentBackup);
+                LoadData();
+                if (IsSaved)
+                    Message = "The Backup is running, don't close the window until the process is finished";
+                else
+                    Message = "Backup operation failed";
+            }
+            catch (Exception ex)
+            {
+
+                Message = ex.Message;
+            }
+        }
+
+
     }
 
 }
