@@ -14,13 +14,13 @@ using System.Windows.Shapes;
 namespace V_3._0.View
 {
     /// <summary>
-    /// Logique d'interaction pour BackupView.xaml
+    /// Logique d'interaction pour BackupV.xaml
     /// </summary>
-    public partial class BackupView : UserControl
+    public partial class BackupV : UserControl
     {
-        public BackupView()
+        public BackupV()
         {
-            /*InitializeComponent();*/
+            InitializeComponent();
         }
     }
 }

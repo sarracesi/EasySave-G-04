@@ -33,5 +33,10 @@ namespace V_3._0
         {
 
         }
+
+        private void BackupView_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
