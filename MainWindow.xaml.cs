@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using V_3._0.ViewModel;
 
 namespace V_3._0
 {
@@ -20,9 +21,12 @@ namespace V_3._0
     /// </summary>
     public partial class MainWindow : Window
     {
+        backupViewModel ViewModel;
         public MainWindow()
         {
             InitializeComponent();
+            ViewModel = new backupViewModel();
+            this.DataContext = ViewModel;
         }
 
         private void BackupView1_Loaded(object sender, RoutedEventArgs e)

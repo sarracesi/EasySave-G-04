@@ -24,14 +24,14 @@
 
 
 
-            <ListView x:Name="savelist" ItemsSource="{Binding Model.WorkList}" Grid.Row="1" Grid.Column="0" Margin="10,263,59,10" SelectionMode="Single" >
+            <ListView x:Name="savelist" ItemsSource="{Binding Path = BackupList}" Grid.Row="1" Grid.Column="0" Margin="10,263,59,10" SelectionMode="Single" >
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header ="ID" DisplayMemberBinding="{Binding Index}" Width="50"/>
-                        <GridViewColumn Header ="Backup" DisplayMemberBinding="{Binding Backup_Name}" Width="90"/>
-                        <GridViewColumn Header ="Folder_Name" DisplayMemberBinding="{Binding Backup_Name}" Width="90"/>
-                        <GridViewColumn Header ="Source_Path" DisplayMemberBinding="{Binding Source_Path}" Width="190" />
-                        <GridViewColumn Header ="Destination_Path" DisplayMemberBinding="{Binding DestinationPath_Path}" Width="190"/>
+                        <GridViewColumn Header ="ID" DisplayMemberBinding="{Binding Path=CurrentBackup.ID}" Width="50"/>
+                        <GridViewColumn Header ="Backup" DisplayMemberBinding="{Binding Path=CurrentBackup.Backup}" Width="90"/>
+                        <GridViewColumn Header ="Folder_Name" DisplayMemberBinding="{Binding Path=CurrentBackup.Folder_Name}" Width="90"/>
+                        <GridViewColumn Header ="Source_Path" DisplayMemberBinding="{Binding Path=CurrentBackup.Source_Path}" Width="190" />
+                        <GridViewColumn Header ="Destination_Path" DisplayMemberBinding="{Binding Path=CurrentBackup.Destination_Path}" Width="190"/>
 
                     </GridView>
                 </ListView.View>
